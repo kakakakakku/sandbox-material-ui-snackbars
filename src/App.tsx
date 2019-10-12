@@ -8,6 +8,10 @@ const App: React.FC = () => {
     setOpen(true);
   };
 
+  const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <button onClick={handleClick}>Open Snackbar 😃</button>
@@ -17,6 +21,8 @@ const App: React.FC = () => {
           horizontal: 'left',
         }}
         open={open}
+        autoHideDuration={5000}
+        onClose={handleClose}
         message={<span id="message-id">This is Snackbar 🎃</span>}
       />
     </div>
