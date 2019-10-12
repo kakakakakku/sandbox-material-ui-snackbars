@@ -9,6 +9,9 @@ const App: React.FC = () => {
   };
 
   const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
     setOpen(false);
   };
 
